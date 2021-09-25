@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.userCard {
+  text-align: center;
+}
+.cardName,
+.cardDescription {
+  text-align: left;
+}
+.cardName {
+  font-weight: bold;
+}
+.cardName {
+  font-size: 1.5rem;
+  padding: 20px 0;
+}
+.cardName:empty:after {
+  content: "Unknown";
+}
+.cardDescription {
+  padding: 0 5px 10px 0;
+  color: gray;
+  line-height: 1.5;
+}
+

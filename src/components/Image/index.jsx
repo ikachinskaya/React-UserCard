@@ -1,4 +1,5 @@
 import { Component } from "react";
+import styles from "./Image.module.css"
 
 class Image extends Component {
   constructor(props) {
@@ -17,16 +18,16 @@ class Image extends Component {
     const { src, alt } = this.props;
     const { isError } = this.state;
     return (
-      <div className="imgWrapper">
+      <div className={styles.imgWrapper}>
         {src !== null && !isError ? (
           <img
-            className="img"
+            className={styles.img}
             src={src}
             alt={alt}
             onError={this.imageHandler}
           />
         ) : (
-          <div className="initials">Unknown</div>
+          <div className={styles.initials}>Unknown</div>
         )}
       </div>
     );

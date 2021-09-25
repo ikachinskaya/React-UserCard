@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Image from "./../Image";
-import "./userCard.css";
+import styles from "./UserCard.module.css";
 
 class UserCard extends Component {
   render() {
@@ -9,12 +9,12 @@ class UserCard extends Component {
     } = this.props;
     const fullName = `${firstName} ${lastName}`.trim();
     return (
-      <article className="userCard">
+      <article className={styles.userCard}>
         <Image src={profilePicture} alt={fullName} />
-        <h2 className="cardName">
+        <h2 className={styles.cardName}>
           {firstName || lastName ? fullName : "Unknown"}
         </h2>
-        <p className="cardDescription">
+        <p className={styles.cardDescription}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
           quod impedit quae sit tempora nihil deleniti ratione sed praesentium
           id

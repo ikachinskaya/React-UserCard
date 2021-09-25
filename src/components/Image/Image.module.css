@@ -1,0 +1,34 @@
+.imgWrapper {
+  width: inherit;
+  height: 300px;
+  position: relative;
+}
+.initials {
+  color: white;
+  font-size: 40px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: grey;
+}
+.initials {
+  font-weight: bold;
+}
+.initials:empty:after {
+  content: "Unknown";
+}
+.img {
+  display: block;
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  inset: 0;
+}
+.img:hover {
+  filter: grayscale(1);
+  transition: all 0.8s ease 0s;
+}
