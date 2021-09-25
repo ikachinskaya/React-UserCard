@@ -1,11 +1,11 @@
 import "./App.css";
 import data from "./data.js";
-import UserCard from "./components/UserCard";
+import UserCardList from "./components/UserCardList";
 
 function App() {
   return (
     <div className="App">
-      <UserCard users={data} />
+      <UserCardList users={data} />
     </div>
   );
 }
