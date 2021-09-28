@@ -1,10 +1,12 @@
 import { Component } from "react";
 import Image from "./../Image";
+import Links from "./../Links";
 import styles from "./UserCard.module.css";
 
 class UserCard extends Component {
   render() {
     const {
+      user,
       user: { firstName, lastName, profilePicture },
     } = this.props;
     const fullName = `${firstName} ${lastName}`.trim();
@@ -19,6 +21,7 @@ class UserCard extends Component {
           quod impedit quae sit tempora nihil deleniti ratione sed praesentium
           id
         </p>
+        <Links user={user} />
       </article>
     );
   }
