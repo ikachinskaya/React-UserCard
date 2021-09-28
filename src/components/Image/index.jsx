@@ -1,5 +1,7 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import styles from "./Image.module.css";
+
 const stc = require("string-to-color");
 
 class Image extends Component {
@@ -48,4 +50,12 @@ class Image extends Component {
   }
 }
 
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  user: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+  }),
+};
 export default Image;

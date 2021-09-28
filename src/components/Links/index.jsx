@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import styles from "./Links.module.css";
 import facebook from "./../../facebook.png";
 import instagram from "./../../instagram.png";
@@ -43,5 +44,12 @@ class Links extends Component {
     );
   }
 }
+
+Links.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    contacts: PropTypes.arrayOf(PropTypes.string),
+  }),
+};
 
 export default Links;

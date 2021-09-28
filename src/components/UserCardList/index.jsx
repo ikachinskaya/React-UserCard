@@ -1,5 +1,6 @@
 import { Component } from "react";
-import UserCard from "./../UserCard";
+import PropTypes from "prop-types";
+import UserCard, { obj } from "./../UserCard";
 import styles from "./UserCardList.module.css";
 
 class UserCardList extends Component {
@@ -17,4 +18,7 @@ class UserCardList extends Component {
   }
 }
 
+UserCardList.propTypes = {
+  users: PropTypes.arrayOf(PropTypes.shape(obj)),
+};
 export default UserCardList;

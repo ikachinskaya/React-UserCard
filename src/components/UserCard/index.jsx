@@ -1,4 +1,5 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import Image from "./../Image";
 import Links from "./../Links";
 import styles from "./UserCard.module.css";
@@ -27,4 +28,13 @@ class UserCard extends Component {
   }
 }
 
+export const obj = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+  profilePicture: PropTypes.string,
+};
+
+UserCard.propTypes = {
+  user: PropTypes.shape(obj),
+};
 export default UserCard;
