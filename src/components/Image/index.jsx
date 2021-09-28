@@ -1,5 +1,6 @@
 import { Component } from "react";
-import styles from "./Image.module.css"
+import styles from "./Image.module.css";
+const stc = require("string-to-color");
 
 class Image extends Component {
   constructor(props) {
@@ -15,7 +16,11 @@ class Image extends Component {
   };
 
   render() {
-    const { src, alt } = this.props;
+    const {
+      src,
+      alt,
+      user: { firstName, lastName },
+    } = this.props;
     const { isError } = this.state;
     return (
       <div className={styles.imgWrapper}>
@@ -27,7 +32,16 @@ class Image extends Component {
             onError={this.imageHandler}
           />
         ) : (
-          <div className={styles.initials}>Unknown</div>
+          <div
+            style={{ backgroundColor: stc(`${firstName} ${lastName}`.trim()) }}
+            className={styles.initials}
+          >
+            {`${firstName} ${lastName}`
+              .trim()
+              .split(" ")
+              .map((word) => word[0])
+              .join(" ")}
+          </div>
         )}
       </div>
     );

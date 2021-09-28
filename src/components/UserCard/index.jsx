@@ -12,7 +12,7 @@ class UserCard extends Component {
     const fullName = `${firstName} ${lastName}`.trim();
     return (
       <article className={styles.userCard}>
-        <Image src={profilePicture} alt={fullName} />
+        <Image src={profilePicture} alt={fullName} user={user} />
         <h2 className={styles.cardName}>
           {firstName || lastName ? fullName : "Unknown"}
         </h2>
