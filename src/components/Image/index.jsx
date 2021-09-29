@@ -51,7 +51,7 @@ class Image extends Component {
 }
 
 Image.propTypes = {
-  src: PropTypes.string.isRequired,
+  src: PropTypes.string,
   alt: PropTypes.string.isRequired,
   user: PropTypes.shape({
     firstName: PropTypes.string,
