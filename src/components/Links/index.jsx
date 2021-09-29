@@ -20,14 +20,13 @@ class Links extends Component {
     const linksList = contacts.map((contact) => {
       const url = new URL(contact);
       let imgSrc;
-      if (SUPPORTED_SOCIAL_NETWORKS.has(url.host)) {
-        imgSrc = SUPPORTED_SOCIAL_NETWORKS.get(url.host);
-      } else {
-        imgSrc = "default.png";
-      }
+      SUPPORTED_SOCIAL_NETWORKS.has(url.host)
+        ? (imgSrc = SUPPORTED_SOCIAL_NETWORKS.get(url.host))
+        : (imgSrc = "default.png");
+
       return (
         <a
-          key={id}
+          key={`${id}-${url.host}`}
           className={styles.link}
           href={contact}
           target="_blank"
