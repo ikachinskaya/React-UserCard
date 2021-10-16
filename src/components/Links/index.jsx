@@ -4,6 +4,7 @@ import styles from "./Links.module.css";
 import facebook from "./../../facebook.png";
 import instagram from "./../../instagram.png";
 import twitter from "./../../twitter.png";
+import defaultImage from "./../../default.png";
 
 const SUPPORTED_SOCIAL_NETWORKS = new Map([
   ["www.instagram.com", instagram],
@@ -19,10 +20,9 @@ class Links extends Component {
 
     const linksList = contacts.map((contact) => {
       const url = new URL(contact);
-      let imgSrc;
-      SUPPORTED_SOCIAL_NETWORKS.has(url.host)
-        ? (imgSrc = SUPPORTED_SOCIAL_NETWORKS.get(url.host))
-        : (imgSrc = "default.png");
+      const imgSrc = SUPPORTED_SOCIAL_NETWORKS.has(url.host)
+        ? SUPPORTED_SOCIAL_NETWORKS.get(url.host)
+        : { defaultImage };
 
       return (
         <a

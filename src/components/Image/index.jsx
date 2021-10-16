@@ -12,33 +12,29 @@ class Image extends Component {
     };
   }
 
-  imageHandler = () => {
+  imageErrorHandler = () => {
     const { isError } = this.state;
     this.setState({ isError: !isError });
   };
 
   render() {
-    const {
-      src,
-      alt,
-      user: { firstName, lastName },
-    } = this.props;
+    const { src, alt, fullName } = this.props;
     const { isError } = this.state;
     return (
       <div className={styles.imgWrapper}>
-        {src !== null && !isError ? (
+        {src && !isError ? (
           <img
             className={styles.img}
             src={src}
             alt={alt}
-            onError={this.imageHandler}
+            onError={this.imageErrorHandler}
           />
         ) : (
           <div
-            style={{ backgroundColor: stc(`${firstName} ${lastName}`.trim()) }}
+            style={{ backgroundColor: stc(`${fullName}`.trim()) }}
             className={styles.initials}
           >
-            {`${firstName} ${lastName}`
+            {`${fullName}`
               .trim()
               .split(" ")
               .map((word) => word[0])
@@ -53,9 +49,6 @@ class Image extends Component {
 Image.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string.isRequired,
-  user: PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-  }),
+  fullName: PropTypes.string,
 };
 export default Image;

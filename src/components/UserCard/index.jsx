@@ -13,9 +13,9 @@ class UserCard extends Component {
     const fullName = `${firstName} ${lastName}`.trim();
     return (
       <article className={styles.userCard}>
-        <Image src={profilePicture} alt={fullName} user={user} />
+        <Image src={profilePicture} alt={fullName} fullName={fullName} />
         <h2 className={styles.cardName}>
-          {firstName || lastName ? fullName : "Unknown"}
+          {fullName || "Unknown"}
         </h2>
         <p className={styles.cardDescription}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium
